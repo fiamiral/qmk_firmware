@@ -1,5 +1,20 @@
-MOUSEKEY_ENABLE = yes    # Mouse keys
+TAP_DANCE_ENABLE = yes # Tap dance
+
+AUTO_SHIFT_ENABLE = yes # Auto shift
+
+# Reduce size
+LTO_ENABLE = yes
+CONSOLE_ENABLE = no
+COMMAND_ENABLE = no
+MOUSEKEY_ENABLE = no
+EXTRAKEY_ENABLE = no
+SPACE_CADET_ENABLE = no
+GRAVE_ESC_ENABLE = no
+MAGIC_ENABLE = no
+MUSIC_ENABLE = no
+
 RGBLIGHT_ENABLE = yes    # Enable WS2812 RGB underlight.
+RGB_MATRIX_ENABLE = no
 OLED_ENABLE     = yes
 OLED_DRIVER     = SSD1306
-LTO_ENABLE      = yes
+

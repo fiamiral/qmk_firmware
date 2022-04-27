@@ -24,28 +24,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Select hand configuration */
 
-#define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
-
-//#define TAPPING_FORCE_HOLD
-//#define TAPPING_TERM 100
-
-#ifdef RGBLIGHT_ENABLE
-    #define RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
-    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #define RGBLIGHT_EFFECT_SNAKE
-    #define RGBLIGHT_EFFECT_KNIGHT
-    #define RGBLIGHT_EFFECT_CHRISTMAS
-    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
-    #define RGBLIGHT_EFFECT_RGB_TEST
-    #define RGBLIGHT_EFFECT_ALTERNATING
-    #define RGBLIGHT_EFFECT_TWINKLE
-    #define RGBLIGHT_LIMIT_VAL 120
-    #define RGBLIGHT_HUE_STEP 10
-    #define RGBLIGHT_SAT_STEP 17
-    #define RGBLIGHT_VAL_STEP 17
-#endif
-
+//#define MASTER_LEFT
+#define EE_HANDS
+ 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+
+
+// Reduce size
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+#define NO_ACTION_ONESHOT
+#define NO_MUSIC_MODE
+
+#define NO_AUTO_SHIFT_SPECIAL
+#define NO_AUTO_SHIFT_NUMERIC
+#define AUTO_SHIFT_TIMEOUT 120
+#define AUTO_SHIFT_MODIFIERS
+#define AUTO_SHIFT_TIMEOUT_PER_KEY
+
+#define TAPPING_TERM 200
+#define PERMISSIVE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
+
+// RGB
+#ifdef RGBLIGHT_ENABLE
+    #define RGBLIGHT_LAYERS
+    #undef RGBLED_NUM
+    #define RGBLED_NUM 54
+    #undef RGBLED_SPLIT
+    #define RGBLED_SPLIT {27, 27}
+    #define RGBLIGHT_SPLIT
+    #define RGBLIGHT_SLEEP
+    #define RGBLIGHT_DEFAULT_HUE 123
+    #define RGBLIGHT_DEFAULT_SAT 90
+    #define RGBLIGHT_DEFAULT_VAL 112
+#endif
