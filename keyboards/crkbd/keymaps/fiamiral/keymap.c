@@ -65,6 +65,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 // custom auto shift
 bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
+        // Normal auto shift
+        case KC_F1 ... KC_F12:
+        // Custom auto shift
         case KC_DOT:
         case KC_COMM:
         case KC_SLSH:
@@ -184,7 +187,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = { \
   /* EUCALYN
    * /-----------------------------------------------------\                 /-----------------------------------------------------\
    * |        |        |        |        |        |        |                 |        |        |        |        |        |        |
-   * |   GUI  | ESCAPE |    ,   |    .   |    P   |    Q   |                 |    Y   |    G   |    D   |    M   |    F   |        |
+   * |        | ESCAPE |    ,   |    .   |    P   |    Q   |                 |    Y   |    G   |    D   |    M   |    F   |        |
    * |        |        |    ?   |    !   |        |        |                 |        |        |        |        |        |        |
    * |--------+--------+--------+--------+--------+--------|                 |--------+--------+--------+--------+--------+--------|
    * |        |        |        |        |        |        |                 |        |        |        |        |        |        |
@@ -197,17 +200,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = { \
    * \-----------------------------------+--------+--------|-----------------|--------+--------+-----------------------------------/
    *                                     |        |        |        |        |        |        |
    *                                     |        |   TAB  |  SPACE |  ENTER | ESCAPE | BSPACE |
-   *                                     |  CTRL  | NUMBER |  SHIFT |        | SYMBOL |        |
+   *                                     |  CTRL  | NUMBER |   GUI  |        | SYMBOL |        |
    *                                     \-----------------------------------------------------/
    */
   #define TAB_NUM LT(_NUMBER, KC_TAB)
-  #define K_SANDS SFT_T(KC_SPC)
+  #define SPC_GUI GUI_T(KC_SPC)
   #define ESC_SYM LT(_SYMBOL, KC_ESC)
   [_EUCALYN] = LAYOUT_split_3x6_3(
-       KC_LGUI,  KC_ESC, KC_COMM,  KC_DOT,    KC_P,    KC_Q,                      KC_Y,    KC_G,    KC_D,    KC_M,    KC_F, _______,
+       _______,  KC_ESC, KC_COMM,  KC_DOT,    KC_P,    KC_Q,                      KC_Y,    KC_G,    KC_D,    KC_M,    KC_F, _______,
        _______,    KC_A,    KC_O,    KC_E,    KC_I,    KC_U,                      KC_B,    KC_N,    KC_T,    KC_R,    KC_S, _______,
        KC_LALT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_W,                      KC_H,    KC_J,    KC_K,    KC_L, KC_MINS, _______,
-                                           KC_LCTL, TAB_NUM,  K_SANDS,  KC_ENT, ESC_SYM, KC_BSPC
+                                           KC_LCTL, TAB_NUM,  SPC_GUI,  KC_ENT, ESC_SYM, KC_BSPC
   ),
   /* SYMBOL
    * /-----------------------------------------------------\                 /-----------------------------------------------------\
