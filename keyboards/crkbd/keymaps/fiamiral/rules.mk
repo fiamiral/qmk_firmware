@@ -1,4 +1,4 @@
-TAP_DANCE_ENABLE = yes # Tap dance
+COMBO_ENABLE = yes
 
 AUTO_SHIFT_ENABLE = yes # Auto shift
 

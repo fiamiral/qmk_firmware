@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#define MASTER_LEFT
 #define EE_HANDS
- 
+
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 
 
@@ -38,7 +38,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define NO_AUTO_SHIFT_SPECIAL
 #define NO_AUTO_SHIFT_NUMERIC
-#define AUTO_SHIFT_TIMEOUT 120
+#define AUTO_SHIFT_TIMEOUT 175
 #define AUTO_SHIFT_MODIFIERS
 #define AUTO_SHIFT_TIMEOUT_PER_KEY
 
@@ -64,3 +64,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 1000hz polling
 #define USB_POLLING_INTERVAL_MS 1
 #define QMK_KEYS_PER_SCAN 12
+
+// combo
+# define COMBO_COUNT 5
